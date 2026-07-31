@@ -13,7 +13,7 @@
       content="dijitalmasallar, teknoloji, bilim, yapay zeka, dijital kültür, dijital medya"
     />
     <meta name="author" content="dijitalmasallar" />
-    <meta name="theme-color" content="#faf6ee" />
+    <meta name="theme-color" content="#ffffff" />
     <meta name="geo.region" content="TR" />
     <meta name="geo.placename" content="Türkiye" />
     <link rel="canonical" href="/" />
@@ -94,212 +94,125 @@
       :root {
         color-scheme: light;
       }
-
-      body {
-        background-image:
-          linear-gradient(120deg, rgba(250, 246, 238, 0.64), rgba(250, 246, 238, 0.28)),
-          url("bg.png");
-        background-size: cover;
-        background-position: center;
-        overflow-x: hidden;
-      }
-
-      .binary-field {
-        position: fixed;
-        inset: 0;
-        z-index: 0;
-        overflow: hidden;
-        pointer-events: none;
-      }
-
-      .binary-bit {
-        position: absolute;
-        color: rgba(18, 18, 18, 0.2);
-        font-family: "Montserrat", sans-serif;
-        font-size: var(--size);
-        font-weight: 700;
-        line-height: 1;
-        opacity: 0;
-        animation: binaryPulse 5.5s ease-in-out infinite;
-        transform: translate(-50%, -50%) rotate(var(--rotate)) scale(0.88);
-        user-select: none;
-      }
-
-      .glass {
-        background: rgba(255, 255, 255, 0.72);
-        border: 1px solid rgba(20, 20, 20, 0.1);
-        box-shadow: 0 28px 80px rgba(22, 18, 14, 0.14);
-        backdrop-filter: blur(22px);
-      }
-
-      @keyframes binaryPulse {
-        0%,
-        100% {
-          opacity: 0;
-          transform: translate(-50%, -50%) rotate(var(--rotate)) scale(0.82);
-        }
-
-        18%,
-        42% {
-          opacity: 0.42;
-          transform: translate(-50%, -50%) rotate(var(--rotate)) scale(1);
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .binary-bit {
-          display: none;
-        }
-      }
     </style>
   </head>
-  <body class="min-h-screen font-sans text-neutral-950 antialiased">
-    <div class="binary-field" aria-hidden="true"></div>
-
-    <main class="relative z-10 flex min-h-screen items-center justify-center px-5 py-10 sm:px-8">
+  <body class="min-h-screen bg-white font-sans text-neutral-950 antialiased">
+    <main class="flex min-h-screen items-center justify-center px-6 py-16">
       <section
-        class="glass grid w-full max-w-5xl overflow-hidden rounded-[2rem] md:grid-cols-[0.95fr_1.2fr]"
+        class="flex w-full max-w-md flex-col items-center text-center"
         aria-label="dijitalmasallar kartvizit sayfası"
       >
-        <div class="flex min-h-[260px] items-center justify-center bg-neutral-950 p-10 sm:p-14">
-          <img
-            src="logo.png"
-            alt="dijitalmasallar logosu"
-            class="h-36 w-36 object-contain sm:h-44 sm:w-44 md:h-56 md:w-56"
-          />
+        <img
+          src="logo.png"
+          alt="dijitalmasallar logosu"
+          class="h-24 w-24 object-contain"
+        />
+
+        <h1 class="mt-8 text-3xl font-semibold tracking-tight sm:text-4xl">
+          dijitalmasallar
+        </h1>
+
+        <p class="mt-4 text-base leading-7 text-neutral-500">
+          Teknoloji, bilim, yapay zeka ve dijital kültür ağırlıklı
+          paylaşımlar yapıyoruz.
+        </p>
+
+        <div class="mt-8 flex items-center gap-2">
+          <a
+            href="mailto:dijitalmasallar@gmail.com"
+            class="text-sm font-medium text-neutral-600 transition hover:text-neutral-950"
+          >
+            dijitalmasallar@gmail.com
+          </a>
+
+          <button
+            type="button"
+            data-copy-email
+            aria-label="E-posta adresini kopyala"
+            class="grid h-6 w-6 place-items-center text-neutral-400 transition hover:text-neutral-950"
+          >
+            <svg
+              data-copy-icon
+              class="h-4 w-4"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              fill="none"
+            >
+              <rect
+                x="8"
+                y="8"
+                width="11"
+                height="11"
+                rx="2"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+              <path
+                d="M5 15V7a2 2 0 0 1 2-2h8"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+            <svg
+              data-check-icon
+              class="hidden h-4 w-4"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              fill="none"
+            >
+              <path
+                d="M5 12.5 9.5 17 19 7"
+                stroke="currentColor"
+                stroke-width="2.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
         </div>
 
-        <div class="flex flex-col justify-between gap-12 p-8 sm:p-12 lg:p-14">
-          <div class="space-y-8">
-            <div class="space-y-4">
-              <h1 class="max-w-full text-[2.35rem] font-black leading-[0.95] tracking-tight text-neutral-950 sm:text-6xl lg:text-7xl">
-                dijitalmasallar
-              </h1>
-            </div>
+        <nav class="mt-6 flex items-center gap-4" aria-label="Sosyal medya bağlantıları">
+          <a
+            href="https://www.instagram.com/temhaangelio"
+            aria-label="Instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="grid h-11 w-11 place-items-center rounded-full border border-neutral-200 text-neutral-700 transition hover:border-neutral-950 hover:text-neutral-950"
+          >
+            <svg class="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true" fill="none">
+              <rect
+                x="4"
+                y="4"
+                width="16"
+                height="16"
+                rx="5"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+              <circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="2" />
+              <circle cx="17" cy="7" r="1" fill="currentColor" />
+            </svg>
+          </a>
 
-            <div class="max-w-lg space-y-3">
-              <p class="text-lg leading-8 text-neutral-700 sm:text-xl">
-                Teknoloji, bilim, yapay zeka ve dijital kültür ağırlıklı
-                paylaşımlar yapıyoruz.
-              </p>
-            </div>
-          </div>
-
-          <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-            <div class="flex items-center gap-2">
-              <a
-                href="mailto:dijitalmasallar@gmail.com"
-                class="text-sm font-medium text-neutral-500 transition hover:text-neutral-950"
-              >
-                dijitalmasallar@gmail.com
-              </a>
-
-              <button
-                type="button"
-                data-copy-email
-                aria-label="E-posta adresini kopyala"
-                class="grid h-6 w-6 place-items-center text-neutral-500 transition hover:text-neutral-950"
-              >
-                <svg
-                  data-copy-icon
-                  class="h-4 w-4"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                  fill="none"
-                >
-                  <rect
-                    x="8"
-                    y="8"
-                    width="11"
-                    height="11"
-                    rx="2"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  />
-                  <path
-                    d="M5 15V7a2 2 0 0 1 2-2h8"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                  />
-                </svg>
-                <svg
-                  data-check-icon
-                  class="hidden h-4 w-4"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                  fill="none"
-                >
-                  <path
-                    d="M5 12.5 9.5 17 19 7"
-                    stroke="currentColor"
-                    stroke-width="2.4"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-            </div>
-
-            <nav class="flex items-center gap-3" aria-label="Sosyal medya bağlantıları">
-              <a
-                href="https://www.instagram.com/temhaangelio"
-                aria-label="Instagram"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="group grid h-12 w-12 place-items-center rounded-full border border-neutral-200 bg-white text-neutral-950 shadow-sm transition hover:-translate-y-1 hover:border-neutral-950 hover:bg-neutral-950 hover:text-white"
-              >
-                <svg class="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true" fill="none">
-                  <rect
-                    x="4"
-                    y="4"
-                    width="16"
-                    height="16"
-                    rx="5"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  />
-                  <circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="2" />
-                  <circle cx="17" cy="7" r="1" fill="currentColor" />
-                </svg>
-              </a>
-
-              <a
-                href="https://x.com/dijitalmasallar"
-                aria-label="X"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="group grid h-12 w-12 place-items-center rounded-full border border-neutral-200 bg-white text-neutral-950 shadow-sm transition hover:-translate-y-1 hover:border-neutral-950 hover:bg-neutral-950 hover:text-white"
-              >
-                <svg class="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
-                  <path
-                    d="M17.64 4h2.94l-6.42 7.34L21.72 20h-5.91l-4.63-5.55L5.88 20H2.93l6.87-7.85L2.56 4h6.06l4.18 5.05L17.64 4Zm-1.03 14.48h1.63L7.73 5.44H5.98l10.63 13.04Z"
-                  />
-                </svg>
-              </a>
-            </nav>
-          </div>
-        </div>
+          <a
+            href="https://x.com/dijitalmasallar"
+            aria-label="X"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="grid h-11 w-11 place-items-center rounded-full border border-neutral-200 text-neutral-700 transition hover:border-neutral-950 hover:text-neutral-950"
+          >
+            <svg class="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+              <path
+                d="M17.64 4h2.94l-6.42 7.34L21.72 20h-5.91l-4.63-5.55L5.88 20H2.93l6.87-7.85L2.56 4h6.06l4.18 5.05L17.64 4Zm-1.03 14.48h1.63L7.73 5.44H5.98l10.63 13.04Z"
+              />
+            </svg>
+          </a>
+        </nav>
       </section>
     </main>
 
     <script>
-      const binaryField = document.querySelector(".binary-field");
-      const bitCount = 34;
-
-      for (let index = 0; index < bitCount; index += 1) {
-        const bit = document.createElement("span");
-        bit.className = "binary-bit";
-        bit.textContent = Math.random() > 0.5 ? "1" : "0";
-        bit.style.left = `${Math.random() * 100}%`;
-        bit.style.top = `${Math.random() * 100}%`;
-        bit.style.setProperty("--size", `${1.2 + Math.random() * 3.4}rem`);
-        bit.style.setProperty("--rotate", `${Math.random() * 80 - 40}deg`);
-        bit.style.animationDelay = `${Math.random() * 5.5}s`;
-        bit.style.animationDuration = `${4.5 + Math.random() * 3.5}s`;
-        binaryField.appendChild(bit);
-      }
-
       const copyButton = document.querySelector("[data-copy-email]");
       const copyIcon = document.querySelector("[data-copy-icon]");
       const checkIcon = document.querySelector("[data-check-icon]");
